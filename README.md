@@ -1,6 +1,6 @@
 # AI-powered-old-photo-restoration
 Phục chế ảnh cũ
-1. Thư viện được sử dụng
+1. Thư viện được sử dụng<br>
 Các thư viện Python được sử dụng trong mã nguồn bao gồm:
 
 OpenCV (cv2): Xử lý ảnh, đọc/ghi ảnh, tạo các biến dạng như nhiễu Gaussian, biến dạng màu sắc, và vùng mất mảng bất quy tắc.
