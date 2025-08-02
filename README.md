@@ -28,10 +28,10 @@ Quy trình của dự án được chia thành các bước chính, từ tiền 
 - Dataset: Sử dụng lớp FaceRestorationGANDataset để tạo cặp ảnh hỏng và ảnh gốc:
   + Đọc ảnh hỏng từ /kaggle/working/fakefaces_degraded và ảnh gốc từ /kaggle/input/fakefaces.
   + Áp dụng biến đổi (transforms.Compose): resize về 256x256, chuyển thành tensor, chuẩn hóa giá trị pixel về [-1, 1].
-- DataLoader: Chia dữ liệu thành 80% train và 20% val (pretrain), sử dụng random_split và DataLoader với batch size 8 (pretrain) hoặc 4 (GAN).
+- DataLoader: Chia dữ liệu thành 80% train và 20% val (pretrain), sử dụng random_split và DataLoader với batch size 8 (pretrain).
 ### Bước 3: Xây dựng mô hình
 - UNetGenerator:
-  + Kiến trúc U-Net với encoder (8 lớp tích chập, giảm kích thước từ 256x256 xuống 1x1) và decoder (7 lớp tích chập chuyển vị, tăng kích thước về 256x256).
+  + Kiến trúc U-Net với encoder (8 lớp tích chập, giảm kích thước từ 128x128 xuống 1x1) và decoder (7 lớp tích chập chuyển vị, tăng kích thước về 128x128).
   + Sử dụng skip connections để kết nối encoder và decoder, cải thiện tái tạo chi tiết.
   + Đầu ra sử dụng Tanh để chuẩn hóa trong [-1, 1].
 - PatchGANDiscriminator:
